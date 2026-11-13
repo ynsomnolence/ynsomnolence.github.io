@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self' data:; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="format-detection" content="telephone=no">
+<title>kawa — full stack developer</title>
+<meta name="description" content="kawa, desenvolvedor full stack de 22 anos. Sites, apps, sistemas e automações com IA, do conceito ao sistema funcionando.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="kawa — full stack developer">
+<meta property="og:description" content="Transformo ideias em soluções reais com código limpo e eficiente.">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/favicon.svg">
+
+<link rel="stylesheet" href="css/style.css">
+<script src="js/boot.js"></script>
+</head>
+<body>
+<a class="skip" href="#sobre">Pular para o conteúdo</a>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__ask" id="loaderAsk" hidden>
+    <p>&gt; seu sistema está com as animações desligadas.<br>&gt; carregar as animações do site?</p>
+    <div class="loader__choices">
+      <button type="button" class="btn btn--small" data-motion="on">[s] com animações</button>
+      <button type="button" class="btn btn--small btn--ghost" data-motion="off">[n] sem animações</button>
+    </div>
+  </div>
+  <div class="loader__inner" id="loaderInner">
+    <canvas class="loader__canvas" id="loaderCanvas"></canvas>
+    <div class="loader__hud">
+      <p class="loader__label">LOADING <span id="loaderPct">000</span>%</p>
+    </div>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#topo">kawa<span class="blink">_</span></a>
+  <nav class="nav__links" id="navLinks" aria-label="Seções">
+    <a href="#sobre">~/sobre</a>
+    <a href="#kagutsuchi">~/kagutsuchi</a>
+    <a href="#linguagens">~/linguagens</a>
+    <a href="#certificacoes">~/certificações</a>
+    <a href="#servicos">~/serviços</a>
+    <a href="#contato">~/contato</a>
+    <a class="nav__mail" data-mail="projeto" href="mailto:kawawebworks@gmail.com?subject=Projeto%20%E2%80%94%20vim%20pelo%20portf%C3%B3lio&amp;body=Ol%C3%A1%2C%20kawa!%20Quero%20conversar%20sobre%20um%20projeto.">e-mail ↗</a>
+  </nav>
+  <span class="nav__progress" aria-hidden="true"><span class="nav__progress-t">travessia</span> <b id="navPct">000</b>%</span>
+  <div class="idioma" role="group" aria-label="Idioma">
+    <button type="button" data-lang="pt" lang="pt-BR" aria-pressed="true">pt</button><span aria-hidden="true">/</span><button type="button" data-lang="en" lang="en" aria-pressed="false">en</button>
+  </div>
+  <a class="btn btn--small nav__cta" data-mail="projeto" href="mailto:kawawebworks@gmail.com?subject=Projeto%20%E2%80%94%20vim%20pelo%20portf%C3%B3lio&amp;body=Ol%C3%A1%2C%20kawa!%20Quero%20conversar%20sobre%20um%20projeto.">Falar comigo</a>
+  <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">menu</button>
+</header>
+
+<main id="topo">
+
+<section class="hero" id="hero" aria-label="Apresentação">
+  <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero__crt" aria-hidden="true"></div>
+  <div class="hero__content">
+    <p class="label">~/01 · ensatsu</p>
+    <h1 class="sr">kawa</h1>
+    <pre class="hero__name" aria-hidden="true">oooo
+`888
+ 888  oooo   .oooo. oooo oooo    ooo .oooo.
+ 888 .8P'   `P  )88b `88. `88.  .8' `P  )88b
+ 888888.     .oP"888  `88..]88..8'   .oP"888
+ 888 `88b.  d8(  888   `888'`888'   d8(  888
+o888o o888o `Y888""8o   `8'  `8'    `Y888""8o</pre>
+    <p class="hero__role">full stack developer</p>
+    <p class="hero__age">22y</p>
+    <p class="hero__tag"><span class="type" data-text="> transformo ideias em soluções reais_"></span></p>
+    <div class="hero__actions">
+      <a class="btn" data-mail="site" href="mailto:kawawebworks@gmail.com?subject=Quero%20um%20site&amp;body=Ol%C3%A1%2C%20kawa!%20Quero%20um%20site.">Quero meu site</a>
+      <a class="btn btn--ghost" href="#kagutsuchi">Ver o projeto Kagutsuchi</a>
+    </div>
+  </div>
+  <p class="hero__hint" aria-hidden="true">passe o cursor no desenho · clique no fundo · role para atravessar</p>
+</section>
+
+<section class="sobre section" id="sobre" aria-labelledby="sobreTitulo">
+  <p class="label">~/02 sobre</p>
+  <div class="sobre__grid">
+    <figure class="window sobre__foto reveal">
+      <figcaption class="window__bar"><span>(x) (-) (+)</span><span>~/kawa.jpg</span><span></span></figcaption>
+      <img class="sobre__img" src="img/kawa.jpg" alt="Foto do kawa" width="720" height="1255">
+    </figure>
+    <div class="sobre__texto">
+      <h2 id="sobreTitulo" class="h2 reveal">Sobre mim</h2>
+      <p class="bio reveal">Me chamo Kawa, tenho 22 anos e sou um desenvolvedor jr atualmente inserido no mercado de desenvolvimento fullstack por apreço à área. Tenho particular interesse em transformar ideias abstratas em soluções concretas, conduzindo projetos desde sua concepção e estruturação até a implementação de sistemas inteiramente funcionais.</p>
+      <p class="bio reveal">Destaco-me pela curiosidade técnica, autonomia na resolução de problemas e facilidade em aprender e me adaptar a diferentes tecnologias e contextos. Tenho especial inclinação por desafios incomuns e projetos fora da curva, nos quais posso explorar possibilidades, romper abordagens convencionais e expandir constantemente minhas capacidades.</p>
+      <blockquote class="quote">
+        <p class="type type--quote" data-text="“Somos o que fazemos repetidamente. A excelência, então, não é um ato, mas um hábito.”"></p>
+        <noscript><p>“Somos o que fazemos repetidamente. A excelência, então, não é um ato, mas um hábito.”</p></noscript>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="wired" id="kagutsuchi" aria-labelledby="wiredTitulo">
+  <div class="wired__bg" aria-hidden="true">
+    <canvas class="wired__canvas" id="corredorCanvas"></canvas>
+    <div class="wired__veil"></div>
+  </div>
+  <div class="wired__grid">
+    <div class="wired__head">
+      <p class="label">~/03 projeto em destaque</p>
+      <h2 id="wiredTitulo" class="wired__title">KAGUTSUCHI</h2>
+      <p class="wired__sub">Assistente pessoal de desktop que coordena agentes de IA sozinha, aprende por repetição e age no computador sempre sob permissão.</p>
+      <ol class="wired__steps">
+        <li><a href="#kagutsuchi-funcionalidades">01 funcionalidades</a></li>
+        <li><a href="#kagutsuchi-seguranca">02 segurança</a></li>
+        <li><a href="#kagutsuchi-backend">03 banco de dados e backend</a></li>
+      </ol>
+      <p class="wired__station" aria-hidden="true"><span class="wired__station-t">corredor · nó</span> <b id="wiredStation">A0</b> / A6</p>
+    </div>
+    <div class="wired__panels">
+      <article class="panel window" id="kagutsuchi-funcionalidades">
+        <header class="window__bar"><span>(x) (-) (+)</span><span>~/kagutsuchi/funcionalidades</span><span></span></header>
+        <div class="panel__body">
+          <h3 class="h3">01 · Funcionalidades</h3>
+          <ul>
+            <li><b>Coordenação automática de agentes:</b> o programa, desenvolvido em prol de atuar como um assistente digital e coordenador de agentes, é inteiramente capaz de adaptar-se a múltiplas funcionalidades e conduzir um conjunto de ações que complementem suas atividades com pares de mãos adicionais.</li>
+            <li><b>Cofre:</b> segundo cérebro em pastas, com rotina por repetição e autoanálise semanal contra perda de contexto. Padrões recorrentes viram regras através de confirmação, permitindo que Kagutsuchi opere constantemente em torno dos resultados esperados.</li>
+            <li><b>Voz:</b> entrada e saída por voz, com o motor de transcrição iniciado pelo próprio app, sem janelas extras.</li>
+            <li><b>Desktop commander:</b> lê e edita arquivos, navega e preenche páginas, e usa terminal e administrador sob permissão.</li>
+            <li><b>Integração de persona:</b> Kagutsuchi pode representar-se através de uma persona 3D sobrepondo diretamente o seu monitor, interagindo com os arquivos e janelas permitidas enquanto dispõe de um conjunto de ações e expressões configuráveis.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="panel window" id="kagutsuchi-seguranca">
+        <header class="window__bar"><span>(x) (-) (+)</span><span>~/kagutsuchi/seguranca</span><span></span></header>
+        <div class="panel__body">
+          <h3 class="h3">02 · Segurança</h3>
+          <ul>
+            <li><b>Permissão explícita:</b> terminal, administrador e navegador pedem confirmação por pop-up na primeira vez, com “permitir desta vez” e “permitir sempre”.</li>
+            <li><b>Negar por padrão:</b> na dúvida, leitura dentro do escopo segue e o resto é negado.</li>
+            <li><b>Hierarquia de instruções:</b> limites do app, depois o usuário, depois o prompt mestre. Conteúdo externo (páginas, arquivos) não tem autoridade, o que protege contra injeção de comandos.</li>
+            <li><b>Núcleo protegido:</b> só o usuário edita o prompt mestre e o AGENTS.md da raiz.</li>
+            <li><b>Cofre de credenciais:</b> logins e senhas guardados automaticamente num cofre, sem gravação manual.</li>
+            <li><b>Execução controlada:</b> ações externas, destrutivas ou com erro ambíguo nunca são repetidas sozinhas; cada tarefa passa por oito estados (de PENDENTE a CONCLUIDA ou FALHOU).</li>
+            <li><b>Privacidade:</b> a persona reage a eventos do app, sem capturar a tela.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="panel window" id="kagutsuchi-backend">
+        <header class="window__bar"><span>(x) (-) (+)</span><span>~/kagutsuchi/backend</span><span></span></header>
+        <div class="panel__body">
+          <h3 class="h3">03 · Banco de dados e backend</h3>
+          <ul>
+            <li><b>Orquestrador multiagente:</b> coordenador A0 e agentes A1 a A6 ativados por contexto, numa cadeia em camadas (a camada 1 delega às seguintes), cada um com o seu prompt editável por requisição do usuário.</li>
+            <li><b>Cofre:</b> armazenamento padrão do app, com pasta externa opcional e conexão com o Obsidian por plugin (planejado).</li>
+            <li><b>Banco de dados:</b> Cloudflare D1 escolhido para o Kagutsuchi e o Cofre, ligado por MCP.</li>
+            <li><b>Camada de IA:</b> provedor e chave configuráveis na interface.</li>
+            <li><b>Serviço local de transcrição:</b> servidor de escuta embutido, iniciado com o microfone.</li>
+            <li><b>Nuvem por usuário:</b> operação em servidor com acesso próprio para cada usuário.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="linguagens" aria-labelledby="lingTitulo">
+  <p class="label">~/04 linguagens</p>
+  <h2 id="lingTitulo" class="h2 reveal">Linguagens que domino</h2>
+  <div class="carrossel reveal" id="langCarrossel" role="group" aria-roledescription="carrossel" aria-label="Linguagens">
+    <div class="carrossel__palco" id="langPalco">
+      <ul class="langs" id="langAnel">
+        <li class="lang"><img src="img/icons/javascript.svg" alt="" width="72" height="72"><b>JavaScript</b><span>sites, interfaces e o app Kagutsuchi</span></li>
+        <li class="lang"><img src="img/icons/java.svg" alt="" width="72" height="72"><b>Java</b><span>backend e APIs</span></li>
+        <li class="lang"><img src="img/icons/python.svg" alt="" width="72" height="72"><b>Python</b><span>automações e IA</span></li>
+        <li class="lang"><img src="img/icons/html.svg" alt="" width="72" height="72"><b>HTML</b><span>a estrutura de tudo na web</span></li>
+      </ul>
+    </div>
+    <p class="sr" id="langAtual" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="section" id="certificacoes" aria-labelledby="certTitulo">
+  <p class="label">~/05 certificações</p>
+  <h2 id="certTitulo" class="h2 reveal">Certificações</h2>
+  <ul class="certs">
+    <li class="cert window reveal">
+      <header class="window__bar"><span>01</span><span>desenvolvimento</span><span></span></header>
+      <div class="cert__body"><img src="img/icons/dev.svg" alt="" width="48" height="48">
+        <h3>AWS Certified Developer – Associate</h3><p class="cert__org">Amazon Web Services</p>
+        <p>Desenvolvimento, testes e implantação de aplicações.</p>
+        <a class="cert__link" data-verify="" href="#" aria-disabled="true">verificar credencial ↗</a></div>
+    </li>
+    <li class="cert window reveal">
+      <header class="window__bar"><span>02</span><span>segurança</span><span></span></header>
+      <div class="cert__body"><img src="img/icons/seg.svg" alt="" width="48" height="48">
+        <h3>CompTIA Security+</h3><p class="cert__org">CompTIA</p>
+        <p>Segurança da informação e redes.</p>
+        <a class="cert__link" data-verify="" href="#" aria-disabled="true">verificar credencial ↗</a></div>
+    </li>
+    <li class="cert window reveal">
+      <header class="window__bar"><span>03</span><span>ia e automação</span><span></span></header>
+      <div class="cert__body"><img src="img/icons/ia.svg" alt="" width="48" height="48">
+        <h3>Azure AI Apps and Agents Developer Associate (AI-103)</h3><p class="cert__org">Microsoft</p>
+        <p>Desenvolvimento de agentes e aplicações com IA.</p>
+        <a class="cert__link" data-verify="" href="#" aria-disabled="true">verificar credencial ↗</a></div>
+    </li>
+    <li class="cert window reveal">
+      <header class="window__bar"><span>04</span><span>dados e inteligência</span><span></span></header>
+      <div class="cert__body"><img src="img/icons/dados.svg" alt="" width="48" height="48">
+        <h3>Power BI Data Analyst Associate (PL-300)</h3><p class="cert__org">Microsoft</p>
+        <p>Modelagem, visualização e análise de dados.</p>
+        <a class="cert__link" data-verify="" href="#" aria-disabled="true">verificar credencial ↗</a></div>
+    </li>
+    <li class="cert window reveal">
+      <header class="window__bar"><span>05</span><span>infraestrutura e sistemas</span><span></span></header>
+      <div class="cert__body"><img src="img/icons/linux.svg" alt="" width="48" height="48">
+        <h3>LPIC-1</h3><p class="cert__org">Linux Professional Institute</p>
+        <p>Administração geral de Linux.</p>
+        <a class="cert__link" data-verify="" href="#" aria-disabled="true">verificar credencial ↗</a></div>
+    </li>
+  </ul>
+</section>
+
+<section class="section" id="servicos" aria-labelledby="servTitulo">
+  <p class="label">~/06 serviços</p>
+  <h2 id="servTitulo" class="h2 reveal">O que eu faço por você</h2>
+  <p class="lead reveal">Seu comércio vendendo direto, sem comissão de aplicativo: site e sistema no seu nome, com QR code próprio.</p>
+  <div class="services">
+    <article class="window service reveal"><header class="window__bar"><span>(x) (-) (+)</span><span>~/sites</span><span></span></header>
+      <div class="service__body"><h3 class="h3">Sites e landing pages</h3><p>Rápidos, responsivos e feitos para transformar visita em cliente.</p></div></article>
+    <article class="window service reveal"><header class="window__bar"><span>(x) (-) (+)</span><span>~/apps</span><span></span></header>
+      <div class="service__body"><h3 class="h3">Apps web instaláveis</h3><p>Abrem no navegador e instalam no celular, sem loja de aplicativos.</p></div></article>
+    <article class="window service reveal"><header class="window__bar"><span>(x) (-) (+)</span><span>~/pedidos</span><span></span></header>
+      <div class="service__body"><h3 class="h3">Pedidos e agendamento</h3><p>Cardápio digital, carrinho, agenda e painel do dono do negócio.</p></div></article>
+    <article class="window service reveal"><header class="window__bar"><span>(x) (-) (+)</span><span>~/ia</span><span></span></header>
+      <div class="service__body"><h3 class="h3">Automações com IA</h3><p>Tarefas repetitivas resolvidas por agentes que trabalham por você.</p></div></article>
+    <article class="window service reveal"><header class="window__bar"><span>(x) (-) (+)</span><span>~/design</span><span></span></header>
+      <div class="service__body"><h3 class="h3">Design de interface</h3><p>Da ideia ao protótipo, com identidade própria.</p></div></article>
+  </div>
+</section>
+
+<section class="section veja" id="veja" aria-labelledby="vejaTitulo">
+  <p class="label">~/07 veja por si mesmo</p>
+  <h2 id="vejaTitulo" class="h2 reveal">Veja o seu negócio com site próprio</h2>
+  <div class="carrossel carrossel--apps reveal" id="appCarrossel" role="group" aria-roledescription="carrossel" aria-label="Apps">
+    <div class="carrossel__palco" id="appPalco">
+      <ul class="apps" id="appAnel">
+
+        <li class="app" data-nome="Cardápio">
+          <div class="phone"><div class="tela tela--cardapio">
+            <div class="tela__status" aria-hidden="true"><span>9:41</span><span class="tela__bat"></span></div>
+            <p class="tela__kicker">cardápio · mesa 12</p>
+            <p class="tela__nome">Cantina Nona</p>
+            <p class="tela__tag">aberto até 23h · peça pela mesa</p>
+            <ul class="tela__abas"><li class="on">pratos</li><li>massas</li><li>bebidas</li><li>doces</li></ul>
+            <ul class="menu">
+              <li><div><b>Filé à parmegiana</b><span>arroz e fritas</span></div><i>R$ 54</i><em>+</em></li>
+              <li class="no"><div><b>Risoto de cogumelos</b><span>parmesão e salsa</span></div><i>R$ 48</i><em class="qtd">− 2 +</em></li>
+              <li><div><b>Frango grelhado</b><span>legumes e purê</span></div><i>R$ 39</i><em>+</em></li>
+              <li><div><b>Salada da casa</b><span>folhas e burrata</span></div><i>R$ 32</i><em>+</em></li>
+            </ul>
+            <p class="tela__barra"><span>2 itens · R$ 96</span><span>pedir ›</span></p>
+          </div></div>
+        </li>
+
+        <li class="app" data-nome="Agendamento">
+          <div class="phone"><div class="tela tela--agenda">
+            <div class="tela__status" aria-hidden="true"><span>9:41</span><span class="tela__bat"></span></div>
+            <p class="tela__kicker">agenda online</p>
+            <p class="tela__nome">Studio Lume</p>
+            <p class="tela__tag">serviço, profissional e horário</p>
+            <p class="tela__sub">serviço</p>
+            <ul class="chips"><li class="on">corte</li><li>escova</li><li>coloração</li><li>unhas</li></ul>
+            <p class="tela__sub">com</p>
+            <ul class="pros"><li>AN</li><li class="on">BE</li><li>CA</li><li class="pros__n">Bea · 45 min</li></ul>
+            <ul class="dias"><li><span>seg</span>10</li><li class="on"><span>ter</span>11</li><li><span>qua</span>12</li><li><span>qui</span>13</li><li><span>sex</span>14</li></ul>
+            <ul class="horas"><li>09:00</li><li class="x">09:30</li><li>10:00</li><li class="on">10:30</li><li class="x">11:00</li><li>14:00</li></ul>
+            <p class="tela__barra tela__barra--cheia"><span>confirmar · ter 11 · 10:30</span></p>
+          </div></div>
+        </li>
+
+        <li class="app" data-nome="Delivery">
+          <div class="phone"><div class="tela tela--delivery">
+            <div class="tela__status" aria-hidden="true"><span>9:41</span><span class="tela__bat"></span></div>
+            <p class="tela__kicker">delivery · pedido #2048</p>
+            <p class="tela__nome">Açaí da Praça</p>
+            <p class="tela__tag">chega em ~12 min</p>
+            <div class="mapa" aria-hidden="true">
+              <svg viewBox="0 0 220 120" focusable="false">
+                <path class="mapa__rua" d="M0 30H220M0 86H220M58 0V120M150 0V120"/>
+                <path class="mapa__rota" d="M24 102V86H58V30H150V14H196"/>
+                <rect class="mapa__loja" x="17" y="95" width="14" height="14"/>
+                <circle class="mapa__casa" cx="196" cy="14" r="7"/>
+                <circle class="mapa__pulso" cx="104" cy="30" r="5"/>
+                <circle class="mapa__moto" cx="104" cy="30" r="5"/>
+              </svg>
+            </div>
+            <ol class="etapas">
+              <li class="ok"><span>pedido recebido</span><i>19:02</i></li>
+              <li class="ok"><span>em preparo</span><i>19:05</i></li>
+              <li class="agora"><span>saiu para entrega</span><i>19:14</i></li>
+              <li><span>entregue</span><i>--:--</i></li>
+            </ol>
+            <p class="entregador"><span class="entregador__av">RA</span><span>Rafa · moto<br><small>açaí 500 ml + granola</small></span><span class="entregador__b">chat</span></p>
+          </div></div>
+        </li>
+
+      </ul>
+    </div>
+    <p class="sr" id="appAtual" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="faqTitulo">
+  <p class="label">~/08 faq</p>
+  <h2 id="faqTitulo" class="h2 reveal">Perguntas frequentes</h2>
+  <div class="faq">
+    <details class="reveal"><summary>Quanto custa um site?</summary><p>Depende do que o seu negócio precisa. Me conta a ideia por e-mail e eu mando um orçamento sem compromisso.</p></details>
+    <details class="reveal"><summary>Quem paga o domínio?</summary><p>O domínio fica no nome do cliente e é pago por ele. Assim o endereço é seu de verdade.</p></details>
+    <details class="reveal"><summary>Tem comissão sobre as vendas?</summary><p>Não. O site é seu e as vendas também. Nenhuma porcentagem sobre pedidos.</p></details>
+    <details class="reveal"><summary>Quanto tempo leva?</summary><p>O prazo é combinado no orçamento, de acordo com o tamanho do projeto.</p></details>
+    <details class="reveal"><summary>Preciso entender de programação?</summary><p>Não. Eu cuido da parte técnica e te mostro como usar o que for seu.</p></details>
+  </div>
+</section>
+
+<section class="contato" id="contato" aria-labelledby="contatoTitulo">
+  <canvas class="contato__canvas" id="fumacaCanvas" aria-hidden="true"></canvas>
+  <img class="contato__bobo" src="img/bobo.png" alt="" aria-hidden="true">
+  <div class="contato__inner">
+    <p class="label">~/09 contato</p>
+    <h2 id="contatoTitulo" class="contato__title">BORA CONVERSAR<br>SOBRE O SEU PROJETO?</h2>
+    <a class="btn btn--big" data-mail="projeto" href="mailto:kawawebworks@gmail.com?subject=Projeto%20%E2%80%94%20vim%20pelo%20portf%C3%B3lio&amp;body=Ol%C3%A1%2C%20kawa!%20Quero%20conversar%20sobre%20um%20projeto.">E-mail ↗</a>
+    <ul class="socials">
+      <li><a href="https://www.instagram.com/ensatsu/" target="_blank" rel="noopener noreferrer" aria-label="Instagram: @ensatsu" title="Instagram"><img src="img/icons/instagram.svg" alt="" width="60" height="60"></a></li>
+      <li><a href="https://github.com/ynsomnolence" target="_blank" rel="noopener noreferrer" aria-label="GitHub: ynsomnolence" title="GitHub"><img src="img/icons/github.svg" alt="" width="60" height="60"></a></li>
+    </ul>
+  </div>
+  <footer class="footer">
+<p class="footer__mail"><a data-mail="projeto" href="mailto:kawawebworks@gmail.com?subject=Projeto%20%E2%80%94%20vim%20pelo%20portf%C3%B3lio&amp;body=Ol%C3%A1%2C%20kawa!%20Quero%20conversar%20sobre%20um%20projeto.">kawawebworks@gmail.com</a></p>
+    <button type="button" class="footer__motion" id="motionToggle" hidden></button>
+  </footer>
+</section>
+
+</main>
+
+<canvas class="fx" id="fxCanvas" aria-hidden="true"></canvas>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/data/bobo.js"></script>
+<script src="js/data/garota.js"></script>
+<script src="js/corredor.js"></script>
+<script src="js/fumaca.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
