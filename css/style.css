@@ -13,7 +13,9 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+/* scrollbar-gutter: reserva o espaço da barra de rolagem desde o primeiro quadro. Sem isso, a barra
+   aparece quando o loading sai, a página encolhe uns 15 px e o fundo fixo pisca ao ser redesenhado. */
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scrollbar-gutter: stable; }
 body {
   margin: 0; background: var(--bg); color: var(--paper);
   font: 400 15px/1.65 var(--mono); letter-spacing: .01em;
